@@ -27,30 +27,13 @@ public class LocalidadesController : ControllerBase
             federacaos.Add(new EstadoFederacao { Estado = "Espírito Santo", Sigla = "ES", Id = 8 });
             federacaos.Add(new EstadoFederacao { Estado = "Goiás", Sigla = "GO", Id = 9 });
             federacaos.Add(new EstadoFederacao { Estado = "Maranhão", Sigla = "MA", Id = 10 });
-            federacaos.Add(new EstadoFederacao { Estado = "Mato Grosso", Sigla = "MT", Id = 11 });
-            federacaos.Add(new EstadoFederacao { Estado = "Mato Grosso do Sul", Sigla = "MS", Id = 12 });
-            federacaos.Add(new EstadoFederacao { Estado = "Minas Gerais", Sigla = "MG", Id = 13 });
-            federacaos.Add(new EstadoFederacao { Estado = "Pará", Sigla = "PA", Id = 14 });
-            federacaos.Add(new EstadoFederacao { Estado = "Paraíba", Sigla = "PB", Id = 15 });
-            federacaos.Add(new EstadoFederacao { Estado = "Paraná", Sigla = "PR", Id = 16 });
-            federacaos.Add(new EstadoFederacao { Estado = "Pernambuco", Sigla = "PE", Id = 17 });
-            federacaos.Add(new EstadoFederacao { Estado = "Piauí", Sigla = "PI", Id = 18 });
-            federacaos.Add(new EstadoFederacao { Estado = "Rio de Janeiro", Sigla = "RJ", Id = 19 });
-            federacaos.Add(new EstadoFederacao { Estado = "Rio Grande do Norte", Sigla = "RN", Id = 20 });
-            federacaos.Add(new EstadoFederacao { Estado = "Rio Grande do Sul", Sigla = "RS", Id = 21 });
-            federacaos.Add(new EstadoFederacao { Estado = "Rondônia", Sigla = "RO", Id = 22 });
-            federacaos.Add(new EstadoFederacao { Estado = "Roraima", Sigla = "RR", Id = 23 });
-            federacaos.Add(new EstadoFederacao { Estado = "Santa Catarina", Sigla = "SC", Id = 24 });
-            federacaos.Add(new EstadoFederacao { Estado = "São Paulo", Sigla = "SP", Id = 25 });
-            federacaos.Add(new EstadoFederacao { Estado = "Sergipe", Sigla = "SE", Id = 26 });
-            federacaos.Add(new EstadoFederacao { Estado = "Tocantins", Sigla = "TO", Id = 27 });
 
         }
 
         [Route("todosestados")]
         [HttpGet]
 
-        public List<EstadoFederacao> GetALLEstados()
+        public List<EstadoFederacao> GetAllEstados()
         { 
             return federacaos;
         }
@@ -60,11 +43,32 @@ public class LocalidadesController : ControllerBase
 
         public EstadoFederacao GetEstadoFederacaoPorId(int id)
         {
-        
             return federacaos.Where(x => x.Id == id).FirstOrDefault();
-
         }
 
+        [HttpPost]
+        [Route("inserirLocal")]
+        public List<EstadoFederacao> InserirPorPost(EstadoFederacao estadoFederacao)
+        {
+            if (estadoFederacao != null)
+            {
+                federacaos.Add(estadoFederacao);
+            }
+
+            return federacaos;
+        }
+
+        [HttpPut]
+        [Route("inserirPorPut")]
+        public List<EstadoFederacao> InserirPorPut(EstadoFederacao estadoFederacao)
+        {
+            if (estadoFederacao != null)
+            {
+                federacaos.Add(estadoFederacao);
+            }
+
+            return GetAllEstados();
+        }
     }
 
 

@@ -13,54 +13,80 @@ namespace Servicos
     [ApiController]
     public class AlunoController : ControllerBase
     {
-        List<nomealuno> alunos = new List<nomealuno>();
+        List<Student> alunos = new List<Student>();
 
 
 
         public AlunoController()
         {
 
-           alunos.Add(new nomealuno { nome = "João", idade = "80", Id = 1 });
-           alunos.Add(new nomealuno { nome = "Maria", idade = "84", Id = 2 });
-           alunos.Add(new nomealuno { nome = "José", idade = "88", Id = 3 });
-           alunos.Add(new nomealuno { nome = "Raimundo", idade = "92", Id = 4 });
-           alunos.Add(new nomealuno { nome = "Manoel", idade = "96", Id = 5 });
-           alunos.Add(new nomealuno { nome = "Francisco", idade = "100", Id = 6 });
-           alunos.Add(new nomealuno { nome = "Joaquim", idade = "104", Id = 7 });
-           alunos.Add(new nomealuno { nome = "Enzo", idade = "108", Id = 8 });
+           alunos.Add(new Student { Nome = "João", Idade = 80, Id = 1 });
+           alunos.Add(new Student { Nome = "Maria", Idade = 84, Id = 2 });
+           alunos.Add(new Student { Nome = "José", Idade = 88, Id = 3 });
+           alunos.Add(new Student { Nome = "Raimundo",Idade = 92, Id = 4 });
+           alunos.Add(new Student { Nome = "Manoel", Idade = 96, Id = 5 });
+           alunos.Add(new Student { Nome = "Francisco", Idade = 100, Id = 6 });
+           alunos.Add(new Student { Nome = "Joaquim", Idade = 104, Id = 7 });
+           alunos.Add(new Student { Nome = "Enzo", Idade = 108, Id = 8 });
        
 
         }
 
-        [Route("todosnomes")]
+        [Route("getAllNames")]
         [HttpGet]
-
-        public List<nomealuno> GetALLnomes()
+        public List<Student> GetAllAlunos()
         {
             return alunos;
         }
 
-        [Route("nomeporid")]
+        [Route("getNameById")]
         [HttpGet]
-
-        public nomealuno GetnomealunoPorId(int id)
+        public Student GetNameById(int id)
         {
-
             return alunos.Where(x => x.Id == id).FirstOrDefault();
-
         }
 
+        [Route("insertStudentByPost")]
+        [HttpPost]
+        public List<Student> InsertStudentByPost(Student aluno)
+        {
+            if (aluno != null)
+            {
+                alunos.Add(aluno);
+            }
+
+            return alunos;
+        }
+
+        [Route("insertStudentByPut")]
+        [HttpPut]
+        public List<Student> InsertStudentByPut(Student aluno)
+        {
+            if (aluno != null)
+            {
+                alunos.Add(aluno);
+            }
+
+            return alunos;
+        }
+
+        [Route("checkStudentById")]
+        [HttpGet]
+        public bool VerificarAlunoPorId(int Id)
+        {
+            return alunos.Where(aluno => aluno.Id == Id).Any();
+        }
     }
 
 
 
-    public class nomealuno
+    public class Student
     {
         public int Id { get; set; }
 
-        public string idade { get; set; }
+        public int Idade { get; set; }
 
-        public string nome { get; set; }
+        public string Nome { get; set; }
     }
 
 

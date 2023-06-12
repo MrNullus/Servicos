@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FNg03lN962dN2qICfL5rYwpLCjztFiDPR8lIxy0IS2QJK8NkHfjORYrDdTQ1XwffIp3s2QTLTIyO1JZ/lJ1MAA==",
+  "dgSpecHash": "pUMYfzotOfprN8k/HjutfHjMigsCYzNRs/6+TeUBC1zxwOxn+rdmogdN8vSgsivUPTToFQAYkMqX19uVpMBsRQ==",
   "success": true,
-  "projectFilePath": "C:\\xampp\\htdocs\\Servicos\\Servicos\\Servicos.csproj",
+  "projectFilePath": "C:\\Users\\Etec\\Desktop\\Servicos\\Servicos\\Servicos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Etec\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Etec\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

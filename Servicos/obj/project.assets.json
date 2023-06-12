@@ -200,11 +200,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\xampp\\htdocs\\Servicos\\Servicos\\Servicos.csproj",
+      "projectUniqueName": "C:\\Users\\Etec\\Desktop\\Servicos\\Servicos\\Servicos.csproj",
       "projectName": "Servicos",
-      "projectPath": "C:\\xampp\\htdocs\\Servicos\\Servicos\\Servicos.csproj",
+      "projectPath": "C:\\Users\\Etec\\Desktop\\Servicos\\Servicos\\Servicos.csproj",
       "packagesPath": "C:\\Users\\Etec\\.nuget\\packages\\",
-      "outputPath": "C:\\xampp\\htdocs\\Servicos\\Servicos\\obj\\",
+      "outputPath": "C:\\Users\\Etec\\Desktop\\Servicos\\Servicos\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
